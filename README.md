@@ -1,7 +1,7 @@
 # kubernetes-samples
 
 
-## 1. bake imaegs
+## 1. bake images & push docker hub
 ```bash
 sh build.sh
 ``` 
