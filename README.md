@@ -1,4 +1,4 @@
-# Kubernetes-Samples
+# kubernetes-samples
 
 
 ## 1. bake imaegs
@@ -26,3 +26,8 @@ sh build.sh
 # 리소스 정보
 > kubectl describe nodes [name]
 
+
+
+#ref 
+명령어 cheat-sheet
+https://kubernetes.io/ko/docs/reference/kubectl/cheatsheet/

@@ -1,23 +1,45 @@
 
 ### yaml 파일 정의해서 생성하기
-> kubectl apply -f simple-pod.yaml
+```bash
+ kubectl apply -f simple-my-pod.yaml
+```
 
-
-### 샘플 앱 실행하기
-> kubectl run k8s-health-app --image=k8s-my-app:latest --port=8080 ‐‐generator=run/v1
 
 ### pod 정보 조회
 
-> kubectl get pod
+```bash
+ kubectl get pod
+ kubectl get pods --all-namespaces -o wide
+```
+
+### pod 내부 컨테이너 실행
+```bash
+ kubectl exec -it health-check-app sh -c health-app
+
+```
 
 ### 로그 보기
-> kubectl logs [pod name]
+```bash
+kubectl logs [pod name]
+```
  
 ### 배포 정보 보기
-> kubectl get deployments 
+```bash
+kubectl get deployments
+```
 
 ### pod 삭제
-> kubectl delete pod [pod name] 
+```bash
+kubectl delete pod [pod name]
+```
 
 ### 리소스 전체 삭제
-> kubectl delete -f simple-pod.yaml 
+```bash
+kubectl delete -f simple-my-pod.yaml
+```
+
+### 로컬 포트 포워딩
+```bash
+kubectl port-forward health-check-app 8080:8080 
+```
+
