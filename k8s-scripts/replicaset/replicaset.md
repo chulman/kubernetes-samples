@@ -1,7 +1,7 @@
 
 ### yaml 파일 정의해서 생성하기
 ```bash
- kubectl apply -f simple-my-pod.yaml
+ kubectl apply -f simple-my-replica.yaml
 ```
 
 ### label 조회
