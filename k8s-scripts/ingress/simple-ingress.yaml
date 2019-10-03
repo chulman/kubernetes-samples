@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: healthcheck-ingress
+spec:
+  rules:
+    - host: com.k8s.myapp
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: healthcheck-svc
+              servicePort: 8080
