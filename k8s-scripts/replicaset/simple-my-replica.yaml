@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: health-check-app
+  labels:
+    app: healthcheck-test
+    environment: dev
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: healthcheck-test
+  template:
+    metadata:
+      labels:
+        app: healthcheck-test
+    spec:
+      containers:
+        - name: health-check-app
+          image: chulm/health-check-app:latest
+          ports:
+              - containerPort: 8080
