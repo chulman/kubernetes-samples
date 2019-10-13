@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: health-check-app
+  labels:
+    app: healthcheck-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: healthcheck-test
+  template:
+    metadata:
+      labels:
+        app: healthcheck-test
+    spec:
+      containers:
+        - name: health-check-app
+          image: chulm/health-check-app:latest
+          ports:
+            - containerPort: 8080
+#          envFrom:
+#            - configMapRef:
+#                name: database-config
+          volumeMounts:
+            - name: config-volume
+              mountPath: /etc/config
+      volumes:
+        - name: config-volume
+          configMap:
+            name: database-config
