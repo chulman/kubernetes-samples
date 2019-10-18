@@ -1,0 +1,11 @@
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: read-clusterrole
+aggregationRule:
+  clusterRoleSelectors:
+    - matchLabels:
+        kubernetes.io/bootstrapping: rbac-defaults
+rules: []
+
+

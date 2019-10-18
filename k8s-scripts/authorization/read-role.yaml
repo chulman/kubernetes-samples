@@ -1,0 +1,9 @@
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  namespace: default #name space 지정
+  name: read-role
+rules:
+  - apiGroups: [""]
+    resources: ["pods"] #선택할 수 있는 pod의 이름
+    verbs: ["list"] #rest api verb 지정
